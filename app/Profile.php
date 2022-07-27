@@ -16,8 +16,8 @@ class Profile extends Model
         'introduction' => 'required',
     );
     
-    public function histories()
+    public function phistories()
     {
-       //
+       return $this->hasMany('App\Phistory');
     }
 }
