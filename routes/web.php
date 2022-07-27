@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('profile/create', 'Admin\ProfileController@create')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@update')->middleware('auth');
+    
 });
 
 //「http://XXXXXX.jp/XXX というアクセスが来たときに、 AAAControllerのbbbというAction に渡すRoutingの設定」を書いてみてください
@@ -34,3 +35,6 @@ Route::group(['prefix' => 'admin'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'NewsController@index');
+
+Route::get('/profile', 'ProfileController@index');
